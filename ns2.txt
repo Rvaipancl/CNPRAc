@@ -1,0 +1,83 @@
+1. Ping
+ Purpose: Tests the reachability of a host on a network and measures the round-trip time.
+ Usage: Ping a remote host (e.g., google.com).
+ Command: ping google.com
+ Explanation: Sends ICMP Echo Request packets to the host, and the host responds with Echo
+Reply packets. This helps determine whether the host is reachable and measures the time taken
+for the packets to travel.
+2. Ipconfig
+ Purpose: Displays network configuration information such as IP address, subnet mask, and
+default gateway for all network interfaces.
+ Usage: Display IP configuration.
+ Command: ipconfig
+ Explanation: Shows the IP addresses of all active network interfaces. Useful for troubleshooting
+network connectivity issues.
+3. NetStat
+ Purpose: Displays network connections, routing tables, and network interface statistics.
+ Usage: Show current active connections and ports in use.
+ Command: netstat
+ Explanation: Lists active connections, listening ports, routing tables, and other network-related
+statistics, which is useful for diagnosing network issues.
+4. NbtStat
+ Purpose: Displays protocol statistics and the current NetBIOS over TCP/IP connections.
+ Usage: Show local NetBIOS names.
+ Command: nbtstat -n
+ Explanation: Displays the local NetBIOS names registered on the computer. Can help in
+troubleshooting NetBIOS issues in a local network.
+5. Hostname
+ Purpose: Displays or sets the system's hostname.
+ Usage: Show the hostname of the system.
+ Command: hostname
+ Explanation: Displays the name of the computer on the network, which is useful for identifying
+systems in a network environment.
+6. Systeminfo
+ Purpose: Displays detailed configuration information about the computer, such as OS version,
+memory, uptime, etc.
+ Usage: Show system information.
+ Command: systeminfo
+ Explanation: Provides detailed information about the operating system, hardware resources, and
+system uptime, useful for diagnostics.
+7. ARP (Address Resolution Protocol)
+ Purpose: Displays and modifies the IP-to-Physical address mapping.
+ Usage: Show the ARP table.
+ Command: arp -a
+ Explanation: Shows the mapping between IP addresses and MAC addresses on the local
+network, useful for troubleshooting network-related issues.
+8. Nslookup
+ Purpose: Queries the DNS to obtain the domain name or IP address mappings.
+ Usage: Lookup the IP address of a domain.
+ Command: nslookup google.com
+ Explanation: Queries the DNS server for the IP address associated with the domain google.com.
+This is useful for DNS troubleshooting and verification.
+9. Tracert
+ Purpose: Traces the route packets take to a destination host.
+ Usage: Trace the route to a remote host.
+ Command: tracert google.com
+ Explanation: Displays each hop a packet takes from the source to the destination. Useful for
+diagnosing routing issues or network congestion.
+10. PingPath
+ Purpose: Similar to tracert, but provides packet loss information at each hop.
+ Usage: Trace the route with packet loss information.
+ Command: pingpath google.com
+ Explanation: Note: pingpath might not be available on all systems. It provides similar
+functionality to tracert but with additional details on packet loss along the path. On Windows,
+tracert is more commonly used.
+11. GetMac
+ Purpose: Displays the MAC addresses of network interfaces.
+ Usage: Show the MAC addresses of all network interfaces.
+ Command: getmac
+ Explanation: Displays the physical MAC addresses for each active network interface. Useful for
+identifying devices on the local network.
+12. Route
+ Purpose: Displays or modifies the routing table of the computer.
+ Usage: Show the routing table.
+ Command: route print
+ Explanation: Shows the routing table, which lists the paths that packets take to different
+destinations on the network. It helps in troubleshooting routing issues.
+13. NetDiag
+ Purpose: Diagnoses network-related problems (this command is more commonly available on
+Windows systems).
+ Usage: Run a network diagnostic.
+ Command: netdiag
+ Explanation: Note: netdiag is primarily available in Windows Server environments and performs
+diagnostics on the network configuration and connectivity.
