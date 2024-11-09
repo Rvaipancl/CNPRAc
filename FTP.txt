@@ -1,0 +1,28 @@
+Steps
+ sudo apt update
+ sudo apt install vsftpd
+ sudo systemctl status vsftpd
+ sudo systemctl start vsftpd
+ sudo nano /etc/vsftpd.conf
+o Set anonymous_enable=NO
+o Set local_enable=YES
+o Set write_enable=YES
+o Uncomment chroot_local_user=YES
+o pasv_min_port=10000
+o pasv_max_port=10100
+ sudo systemctl restart vsftpd
+ sudo ufw allow ftp
+o sudo ufw allow 10000:10100/tcp
+ sudo useradd -m testuser
+ sudo passwd testuser
+ hostname or ifconfig
+ sudo ftp your-server-name
+After connecting to the FTP server, we can run these commands:
+ get
+ mget
+ put
+ mput
+ mkdir
+ rmdir
+ delete
+ mdelete
