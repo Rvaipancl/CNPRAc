@@ -1,0 +1,84 @@
+TCP Server
+1. Create a socket using socket.AF_INET and socket.SOCK_STREAM.
+2. Bind the socket to a specific IP address and port.
+3. Listen for incoming connections with listen().
+4. Accept a connection and establish a client-server communication channel.
+5. Send/Receive data.
+6. Close the connection.
+Code
+import socket
+# Create TCP socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Bind the socket to an IP and port
+server_socket.bind(('localhost', 12345))
+# Listen for incoming connections
+server_socket.listen(1)
+print("Server is listening on port 12345...")
+# Accept a connection from a client
+client_socket, address = server_socket.accept()
+print(f"Connection from {address} has been established.")
+# Receive data from the client
+data = client_socket.recv(1024).decode()
+print(f"Received from client: {data}")
+# Send data to the client
+client_socket.send("Hello from server!".encode())
+# Close connections
+client_socket.close()
+server_socket.close()
+TCP Client
+1. Create a socket with AF_INET and SOCK_STREAM.
+2. Connect to the server’s IP and port.
+3. Send/Receive data.
+4. Close the socket.
+Code
+import socket
+# Create TCP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# Connect to the server
+client_socket.connect(('localhost', 12345))
+# Send data to the server
+client_socket.send("Hello from client!".encode())
+# Receive data from the server
+data = client_socket.recv(1024).decode()
+print(f"Received from server: {data}")
+# Close the connection
+client_socket.close()
+UDP Server
+1. Create a socket using AF_INET and SOCK_DGRAM.
+2. Bind the socket to an IP and port.
+3. Receive datagrams from clients.
+4. Send responses to the clients.
+5. Close the socket when done.
+Code
+import socket
+# Create UDP socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# Bind the socket to an IP and port
+server_socket.bind(('localhost', 12345))
+print("UDP Server is listening on port 12345...")
+# Receive data from a client
+data, client_address = server_socket.recvfrom(1024)
+print(f"Received from client {client_address}: {data.decode()}")
+# Send a response back to the client
+server_socket.sendto("Hello from UDP server!".encode(), client_address)
+# Close the socket
+server_socket.close()
+UDP Client
+1. Create a socket with AF_INET and SOCK_DGRAM.
+2. Send a datagram to the server.
+3. Receive a response from the server.
+4. Close the socket.
+Code
+import socket
+# Create UDP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# Send data to the server
+client_socket.sendto("Hello from UDP client!".encode(), ('localhost', 12345))
+# Receive data from the server
+data, server_address = client_socket.recvfrom(1024)
+print(f"Received from server: {data.decode()}")
+# Close the socket
+client_socket.close()
+Summary
+1. TCP: Create, bind, listen, accept, send/receive, close.
+2. UDP: Create, bind, sendto/recvfrom, close.
